@@ -12,11 +12,12 @@ async function currencyExchange() {
         { code: "GBP", rate: 0.8598 }
     ];
 
-    // 1. Choose Conversion Direction
+    // 1. starting program ui screen
     const directionInput = await rl.question(
         "Select conversion direction:\n1. EUR to Foreign Currency\n2. Foreign Currency to EUR\n3. Quit\n> "
     );
     
+
     const direction = Number(directionInput.trim());
 
     if (direction === 3 || directionInput.trim().toUpperCase() === "QUIT") {
@@ -31,7 +32,7 @@ async function currencyExchange() {
         return;
     }
 
-    // 2. Select Foreign Currency
+    // 2. lets select the foreign currency
     const currencyInput = await rl.question(
         "\nSelect the foreign currency:\n1. USD\n2. GBP\n3. Quit\n> "
     );
@@ -52,9 +53,9 @@ async function currencyExchange() {
 
     const selectedCurrency = exchangeRates[currencyType - 1];
 
-    // 3. Get Amount and Convert
+    // 3. we will get our amount and convert it
     if (direction === 1) {
-        // EUR -> Foreign
+        // conver EUR to foreign
         const moneyInput = await rl.question(`\nHow much EUR do you want to convert to ${selectedCurrency.code}?\n> `);
         const usersMoney = Number(moneyInput);
 
@@ -65,14 +66,14 @@ async function currencyExchange() {
             console.log(`\n${usersMoney.toFixed(2)} EUR = ${converted.toFixed(2)} ${selectedCurrency.code}`);
         }
     } else if (direction === 2) {
-        // Foreign -> EUR
+        // conver foreign to EUR
         const moneyInput = await rl.question(`\nHow much ${selectedCurrency.code} do you want to convert to EUR?\n> `);
         const usersMoney = Number(moneyInput);
 
         if (usersMoney <= 0 || isNaN(usersMoney)) {
             console.log("Please enter a valid positive number.");
         } else {
-            // BACKWARDS CONVERSION: Divide the foreign amount by the standard rate
+            // BACKWARDS CONVERSION: divides the foreign amount by the standard rate :p
             const converted = usersMoney / selectedCurrency.rate;
             console.log(`\n${usersMoney.toFixed(2)} ${selectedCurrency.code} = ${converted.toFixed(2)} EUR`);
         }

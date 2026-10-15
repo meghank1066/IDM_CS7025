@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+	--ink: #30283d;
+	--muted: #897f96;
+	--pink: #f28eae;
+	--purple: #907de8;
+	--cream: #fffafc;
+	font-family: 'DM Sans', sans-serif;
+	color: var(--ink);
+	background: #fcf8ff;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 28px;
+	background: radial-gradient(circle at 10% 0%, #ffe7ef, transparent 35%),
+		radial-gradient(circle at 95% 12%, #e9e4ff, transparent 30%), #fcf8ff;
+}
+
+.h1
+{
+    margin: auto;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.app, .music-app {
+	width: min(1080px, 100%);
+	min-height: 620px;
+	margin: 0 auto;
+	overflow: hidden;
+	border: 1px solid #fff;
+	border-radius: 26px;
+	background: rgb(255 255 255 / 88%);
+	box-shadow: 0 16px 45px rgb(67 45 91 / 10%);
+}
+
+.sidebar {
+	width: 220px;
+	padding: 28px 20px;
+	background: #fffafd;
+}

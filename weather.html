@@ -4,16 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weather App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="h1">Weather</h1>
-
-  <input class="location-input" id="location-input" type="text" placeholder="Enter city" />
-  <button class="search-btn" id="search-loc-btn">Get Weather</button>
+<h1 class="h1">Weather Wonderer</h1>
+<div class="search-container" id="search-container">
+    <input class="location-input" id="location-input" type="text" placeholder="Search any city..." autocomplete="off" />
+    <div id="suggestions-box" class="suggestions-box"></div>
+  </div>
+<button class="search-btn" id="search-loc-btn">Get Weather</button>
 <div class="weather-div">
   <div class='weather-result' id="weather-result"></div>
 </div>
+<img id="cuteGif" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmE0bHg1d3NoZzhlajlzYTNkczNyeHBmZGh0eGlobnJ0Y25lMzA1bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4iJvmdG6jbFKw/giphy.gif" alt="Animated GIF" style="display: block;" />
   <script src="./index.js"></script>
 </body>
 </html>

@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Music App</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="music.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Playlist Generator</title>
+  <link rel="stylesheet" href="music.css">
 </head>
 <body>
-<h1 class="h1">Music</h1>
 
+  <div class="container">
+    <h1>🎵 Select a Category</h1>
+    <p>Choose a category to display its popular playlist:</p>
 
-<script src="./index.js"></script>
+    <!-- Category Option Buttons -->
+    <div class="category-buttons">
+      <button class="cat-btn active" onclick="showCategory('pop')">Pop</button>
+      <button class="cat-btn" onclick="showCategory('rock')">Rock</button>
+      <button class="cat-btn" onclick="showCategory('alt')">Alt</button>
+      <button class="cat-btn" onclick="showCategory('slow')">Slow</button>
+    </div>
+
+    <!-- Category Heading -->
+    <h2 id="playlist-heading">Pop Playlist</h2>
+
+    <!-- Playlist Container -->
+    <ul id="playlist" class="playlist">
+      <!-- JavaScript inserts list items here -->
+    </ul>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>

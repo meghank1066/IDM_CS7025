@@ -1,4 +1,4 @@
-// 1. Database of popular playlists by category
+//database of popular playlists by category
 const playlists = {
   pop: [
     { title: "Blinding Lights", artist: "The Weeknd" },
@@ -30,28 +30,28 @@ const playlists = {
   ]
 };
 
-// 2. DOM Elements
+// DOM Elements
 const playlistContainer = document.getElementById("playlist");
 const playlistHeading = document.getElementById("playlist-heading");
 const buttons = document.querySelectorAll(".cat-btn");
 
-// 3. Function to display selected category
+// function to display selected category
 function showCategory(categoryKey) {
   // Update button active states
   buttons.forEach(btn => btn.classList.remove("active"));
   event.target.classList.add("active");
 
-  // Update Section Title
+  // update Section Title
   const categoryName = categoryKey.charAt(0).toUpperCase() + categoryKey.slice(1);
   playlistHeading.textContent = `${categoryName} Playlist`;
 
-  // Clear current list
+  // clear current list
   playlistContainer.innerHTML = "";
 
-  // Get selected category tracks
+  // gete selected category tracks
   const tracks = playlists[categoryKey];
 
-  // Render songs into the DOM
+  // render songs into the DOM
   tracks.forEach(song => {
     const li = document.createElement("li");
     li.classList.add("song-item");
@@ -63,5 +63,5 @@ function showCategory(categoryKey) {
   });
 }
 
-// Render Pop playlist by default on load
+// render Pop playlist by default on load
 showCategory('pop');

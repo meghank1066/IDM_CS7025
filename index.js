@@ -35,6 +35,14 @@ function getWeather() {
       const sunset = new Date((data.sys.sunset + data.timezone) * 1000).toLocaleTimeString("en-GB", { timeZone: "UTC", hour: "2-digit", minute: "2-digit"});
       const feelsLike = data.main.feels_like;
 
+      console.log("Weather results:", {
+        city: cityName,
+        temperature: `${temp}°C`,
+        condition: description,
+        sunrise,
+        sunset,
+        feelsLike: `${feelsLike}°C`
+      });
 
         weatherResult.innerHTML = `
         <p>City: ${cityName}</p>
